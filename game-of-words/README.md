@@ -7,12 +7,12 @@ Game of Words
 
 TASK
 ------------------------------------------
-Navegation bar // 
-Get random words//
-Separate every letter of the random//
-Randomize the letters//
-display synonyms on top of the random word//
-roll dice to swap random word// {maybe}
-store the words compiled and get all the data about it//{maybe}
-scoreboard//
-styling//
+* Navegation bar // 
+* Get random words//
+* Separate every letter of the random//
+* Randomize the letters//
+* Display synonyms on top of the random word//
+* Roll dice to swap random word// {maybe}
+* Store the words compiled and get all the data about it//{maybe}
+* Scoreboard//
+* Styling//
