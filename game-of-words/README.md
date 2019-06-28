@@ -1,14 +1,17 @@
-PROJECT 2
+# Project Overview
 ------------------------------------------
-API: https://www.wordsapi.com/
-------------------------------------------
-GAME OF WORDS
-------------------------------------------
+## GAME OF WORDS
 
  This App is about a game based on lenguage learning, starting the match , It will give you synonyms of a word that you need to compile in order to get points..
  
+## API: https://www.wordsapi.com/
 ------------------------------------------
-TASK
+## Wireframes
+
+![UNADJUSTEDNONRAW_thumb_b40](https://user-images.githubusercontent.com/50800873/60344689-1abffa80-9985-11e9-88e0-ca594e1f356e.jpg)
+ 
+------------------------------------------
+## Task
 ------------------------------------------
 * Navegation bar // 
 * Get random words //
@@ -21,8 +24,27 @@ TASK
 * Scoreboard //
 * Styling //
 
+## React Component Hierarchy
+```
+< div className= ‘ App’ >
+  <header>
+    <Navigation />
+    <HomePage />
+    <Instruction />
+  </header>
 
-![UNADJUSTEDNONRAW_thumb_b40](https://user-images.githubusercontent.com/50800873/60344689-1abffa80-9985-11e9-88e0-ca594e1f356e.jpg)
+  <main>
+    <Game />
+    <Score />
+    <Definition />
+    <RandomWord />
+    <Input />
+    <DecodedWordList />
+  </main>
 
+  <footer>
+    <Credits />
+  </footer>
+</div>
+```
 
-IMG HERE!! YAY.... !! :P
