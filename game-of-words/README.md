@@ -4,7 +4,9 @@ API: https://www.wordsapi.com/
 ------------------------------------------
 GAME OF WORDS
 ------------------------------------------
+
  This App is about a game based on lenguage learning, starting the match , It will give you synonyms of a word that you need to compile in order to get points..
+ 
 ------------------------------------------
 TASK
 ------------------------------------------
