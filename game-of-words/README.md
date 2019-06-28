@@ -20,3 +20,4 @@ TASK
 * Store the words compiled and get all the data about it // {maybe}
 * Scoreboard //
 * Styling //
+
