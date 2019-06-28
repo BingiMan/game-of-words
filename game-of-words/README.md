@@ -21,4 +21,8 @@ TASK
 * Scoreboard //
 * Styling //
 
+
+![UNADJUSTEDNONRAW_thumb_b40](https://user-images.githubusercontent.com/50800873/60344689-1abffa80-9985-11e9-88e0-ca594e1f356e.jpg)
+
+
 IMG HERE!! YAY.... !! :P
