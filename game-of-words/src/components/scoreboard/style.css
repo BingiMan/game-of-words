@@ -5,6 +5,7 @@
     height: 250px;
     width: 250px;
     left: -250px;
+    top: 83px;
     transition: left 0.4s ease-in-out;
     -webkit-transition: left 0.4s ease-in-out;
     font-size: 18px;

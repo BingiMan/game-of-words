@@ -43,7 +43,7 @@ export default class RandomWord extends React.Component {
   render() {
     return (
       <div className='game-main-container'>
-        <div>
+        <div className='board-img'>
           {this.state.word ?
             <div className='game-content-wrapper'>
               <h1 className='word-definition'>Definition</h1>

@@ -1,6 +1,9 @@
 .game-main-container{
-    background-color: mediumslateblue;
     height: 700px;
+
+}
+.board-img{
+  
 }
 .random-word{
     display: inline-block;

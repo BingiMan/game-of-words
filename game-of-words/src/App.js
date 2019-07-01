@@ -192,7 +192,7 @@ class App extends React.Component {
               gamePaused={this.state.settings.gamePaused} /> : null}
           <button className="scoreboard-button" onClick={this.toggleScoreBoard}>
             SCOREBOARD
-                    </button>
+          </button>
         </main>
         <footer>
         </footer>
