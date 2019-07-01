@@ -1,0 +1,42 @@
+.main-container{
+    position: fixed;
+    background: #444;
+    color: #fff;
+    height: 250px;
+    width: 250px;
+    left: -250px;
+    transition: left 0.4s ease-in-out;
+    -webkit-transition: left 0.4s ease-in-out;
+    font-size: 18px;
+    border-radius: 0 20px 20px 0;
+}
+.main-container:hover {
+    left: -15px;
+}
+.main-container:hover > table > tbody > div#panelCaller{
+    opacity:0;
+    visibility: hidden;
+}
+
+#panelCaller {
+    position: absolute;
+    top: 50px;
+    left: 250px;
+    background: #444;
+    display: grid;
+    width: 18%;
+    margin: -30px 0px 0px 0px;
+    border-radius: 0px 16px 16px 0px;
+    height: 85%;
+    transition: all ease 0.8s;
+}
+
+
+.table-container{
+    display: inline-block;
+    margin: 50px 0px;
+}
+tr{
+    margin-bottom: 2px;
+}
+

@@ -1,0 +1,27 @@
+.game-main-container{
+    background-color: mediumslateblue;
+    height: 700px;
+}
+.random-word{
+    display: inline-block;
+    font-size: 60px;
+    padding: 0 8px;
+}
+.game-content-wrapper{
+    margin-bottom: 13%;
+}
+.game-input  button , input{
+    font-size: 20px;
+    border-radius: 7px;
+}
+.game-button {
+background-color: red;
+    color: white;
+}
+.game-button:hover{
+    box-shadow: 0 0 11px yellow;
+    box-shadow: 0 0 0 2em red;
+}
+.word-definition{
+    padding: 150px;
+}

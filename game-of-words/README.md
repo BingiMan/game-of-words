@@ -19,8 +19,11 @@
 - Render data on page 
 - Allow user to Play the Game
 - User should be able to use the Input.
-- Scoarboard
+
+- Scoreboard
 - Save their decoded Words on a List
+- Add a timer
+- Hint Penalty
 
 ## PostMVP
 - Allow the user to drag and drop the coded word, instead of the Input.
@@ -29,7 +32,7 @@
 
 ## Task
 
-* Navegation bar // 
+* Navigation bar // 
 * Get random words //
 * Separate every letter of the random word //
 * Randomize the letters //
