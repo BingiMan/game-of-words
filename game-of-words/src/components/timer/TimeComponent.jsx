@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './style.css'
 
 export default class TimeComponent extends Component {
   constructor(props) {
@@ -43,13 +44,10 @@ export default class TimeComponent extends Component {
 
   render() {
     return (
-      <div>
-        <div>
-          <div>TIMER:</div>
-        </div>
-        <div>
-          {this.state.timeElapsed}
-        </div>
+      <div className="timmer-bg">
+        <div className="font-time">
+          {this.state.timeElapsed}s
+                </div>
       </div>
     );
   }

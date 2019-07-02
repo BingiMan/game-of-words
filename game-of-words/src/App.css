@@ -1,39 +1,57 @@
 body {
   text-align: center
 }
-a{
-  margin: 10px;
-}
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-  "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-  sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+
+a {
+  text-decoration: none;
+  font-weight: 800;
+  margin: 23px 20px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-  monospace;
-}
-
-html, body, #root, .App {
-  height: 100%;
+header {
+  padding-top: 5px;
+  text-align: center;
 }
 
 .App {
   background-image: url("assets/img/main-bg.png");
   background-size: auto 100%;
+  overflow: hidden;
 }
 
-.scoreboard-button {
+.play-btn {
+  background-image: url("assets/img/play-btn.png");
+  display: inline-block;
+  width: 190px;
+  height: 68px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.scoreboard-button, .scoreboard-button-active {
   word-break: break-all;
   width: 26px;
   position: absolute;
   top: 100px;
-  font-size: 18px;
   transform: translate(0, 0);
   left: 0;
   border-radius: 0 10px 10px 0;
 }
+
+.scoreboard-button-active {
+  transform: translate(200px, 0);
+}
+
+/*!*.panda-img{*!*/
+/*!*  background-image: url('assets/img/panda-coding2.png');*!*/
+/*!*  background-size: contain;*!*/
+/*!*}*!*/
+/*background-image: url(/static/media/panda-coding2.0be0895c.png);*/
+/*background-size: contain;*/
+/*width: 200px;*/
+/*height: 200px;*/
+/*background-repeat: no-repeat;*/
+/*position: fixed;*/
+/*bottom: -4px;*/
+/*right: -5%;*/
+/*}*/

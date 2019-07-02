@@ -1,30 +1,30 @@
 .game-main-container{
-    height: 700px;
+  height: 700px;
 
 }
 .board-img{
-  
+
 }
 .random-word{
-    display: inline-block;
-    font-size: 60px;
-    padding: 0 8px;
+  display: inline-block;
+  font-size: 60px;
+  padding: 0 14px;
 }
 .game-content-wrapper{
-    margin-bottom: 13%;
+  margin-bottom: 13%;
 }
 .game-input  button , input{
-    font-size: 20px;
-    border-radius: 7px;
+  font-size: 20px;
+  border-radius: 7px;
 }
 .game-button {
-background-color: red;
-    color: white;
+  background-color: red;
+  color: white;
 }
 .game-button:hover{
-    box-shadow: 0 0 11px yellow;
-    box-shadow: 0 0 0 2em red;
+  box-shadow: 0 0 11px yellow;
+  box-shadow: 0 0 0 2em red;
 }
 .word-definition{
-    padding: 150px;
+  padding: 150px;
 }

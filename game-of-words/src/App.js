@@ -7,6 +7,8 @@ import { fetchData } from './service/word-api'
 import ScoreBoard from "./components/scoreboard/ScoreBoard";
 import TimeComponent from "./components/timer/TimeComponent";
 import StatisticsComponent from "./components/scoreboard/StatisticsComponent";
+import home_btn_img from './assets/img/home-btn.png'
+import play_btn_img from './assets/img/play-btn.png'
 
 class App extends React.Component {
   constructor() {
@@ -138,6 +140,7 @@ class App extends React.Component {
   };
 
   startGame = () => {
+    console.log("Starting game");
     this.setState({
       settings: Object.assign(
         {},
@@ -175,9 +178,13 @@ class App extends React.Component {
     return (
       <div className="App">
         <header>
-          <Link to="/">Home</Link>
-          <Link onClick={this.startGame} to="/game-of-words">Game of Words</Link>
-          <Link to="/under-construction">Magic</Link>
+          <Link to="/">
+            <img src={home_btn_img} alt="home" height="100" />
+          </Link>
+          <Link onClick={this.startGame} to="/game-of-words">
+            <img src={play_btn_img} alt="play now" height="100" />
+          </Link>
+          {/*<Link to="/under-construction">Magic</Link>*/}
         </header>
         <main>
           <Route exact path="/" render={Home} />
@@ -190,12 +197,10 @@ class App extends React.Component {
           {!this.state.settings.gamePaused ?
             <TimeComponent ref={this.timerRef} gameOver={this.state.settings.gameOver}
               gamePaused={this.state.settings.gamePaused} /> : null}
-          <button className="scoreboard-button" onClick={this.toggleScoreBoard}>
+          <button className={this.state.settings.toggle ? 'scoreboard-button-active' : 'scoreboard-button'} onClick={this.toggleScoreBoard}>
             SCOREBOARD
-          </button>
+                    </button>
         </main>
-        <footer>
-        </footer>
       </div>
     );
   }

@@ -5,11 +5,10 @@ import './style.css';
 
 export function Home() {
   return (
-    <section>
+    <section className="home-section">
       <div>
         <img src={word_icon} alt="Word Game" className="word_icon" />
-        <h3>Game</h3>
-        <h1>Train Your Brain</h1>
+        <h3 className="game-title">Game</h3>
         <Introduction />
       </div>
     </section>

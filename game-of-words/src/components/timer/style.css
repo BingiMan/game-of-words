@@ -1,0 +1,17 @@
+.timmer-bg {
+  background-image: url("../../assets/img/time-board.png");
+  position: absolute;
+  right: 0;
+  width: 250px;
+  height: 330px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  bottom: 0;
+}
+
+.font-time {
+  font-size: 52px;
+  color: white;
+  font-weight: bold;
+  margin-top: 56px;
+}
