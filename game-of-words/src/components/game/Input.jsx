@@ -27,10 +27,10 @@ export default class Input extends React.Component {
 
   render() {
     return (
-      <div>
-        <input type="text" placeholder="Guess the word" onChange={this.handleChange} />
-        <button className='game-button' onClick={this.handleClick}>Guess</button>
-      </div>
+        <div>
+          <input type="text" placeholder="Guess the word" onChange={this.handleChange} />
+          <button className='game-button' onClick={this.handleClick}>Guess</button>
+        </div>
     )
   }
 }

@@ -179,10 +179,10 @@ class App extends React.Component {
       <div className="App">
         <header>
           <Link to="/">
-            <img src={home_btn_img} alt="home" height="100" />
+            <img className='link-img' src={home_btn_img} alt="home" height="100" />
           </Link>
           <Link onClick={this.startGame} to="/game-of-words">
-            <img src={play_btn_img} alt="play now" height="100" />
+            <img className='link-img' src={play_btn_img} alt="play now" height="100" />
           </Link>
           {/*<Link to="/under-construction">Magic</Link>*/}
         </header>

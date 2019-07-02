@@ -1,30 +1,98 @@
-.game-main-container{
+.game-main-container {
   height: 700px;
 
 }
-.board-img{
+
+.board-img {
 
 }
-.random-word{
+
+.random-word {
   display: inline-block;
-  font-size: 60px;
-  padding: 0 14px;
+  font-size: 28px;
 }
-.game-content-wrapper{
+
+.game-content-wrapper {
   margin-bottom: 13%;
 }
-.game-input  button , input{
+
+.game-input button, input {
   font-size: 20px;
-  border-radius: 7px;
+  border: none;
+  font-weight: 800;
 }
+
+.game-input input {
+  background: url(../../assets/img/button-img.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 373px 98px;
+  width: 328px;
+  height: 84px;
+  text-align: center;
+  transform: rotate(-12deg);
+}
+
+::placeholder {
+  color: yellow;
+  text-shadow: 1px 0px 4px #081e19;
+}
+
 .game-button {
-  background-color: red;
+  height: 84px;
+  background: url(../../assets/img/button-img.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 238px 94px;
+  color: maroon;
+  margin: 20px;
+  width: 200px;
+  transform: rotate(23deg);
+}
+
+.game-button:hover {
+  text-shadow: 1px 0px 4px yellow;
+}
+
+.word-definition {
+  padding-top: 100px;
+}
+
+.word-list-container {
+  display: inline-flex;
+  height: auto;
+}
+
+.word-list-container > ul {
+  margin: 0;
+  padding: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 0;
+  display: contents;
+}
+
+li.word-wooden {
+  background: url(../../assets/img/wooden_word.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 64px 64px;
   color: white;
+  display: inline-flex;
+  width: 64px;
+  height: 64px;
+  user-select: none;
 }
-.game-button:hover{
-  box-shadow: 0 0 11px yellow;
-  box-shadow: 0 0 0 2em red;
+
+li.word-wooden > div {
+  margin: 12px auto;
+  display: flex;
 }
-.word-definition{
-  padding: 150px;
+
+li.word-wooden > div > span {
+  margin: auto;
 }
+
+

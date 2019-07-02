@@ -20,7 +20,6 @@ export default class TimeComponent extends Component {
         timeElapsed: Math.floor((new Date().getTime() - this.state.startTime) / 1000)
       });
     }
-
     return this.state.timeElapsed;
   };
 
