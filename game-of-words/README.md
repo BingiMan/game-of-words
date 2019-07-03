@@ -30,19 +30,6 @@
 - Allow the user to swap the random word, Like a "Roll the dice"
 - Display a side section with the decoded words.
 
-## Task
-
-* Navigation bar // 
-* Get random words //
-* Separate every letter of the random word //
-* Randomize the letters //
-* Display synonyms on top of the random word //
-* Roll dice to swap random word // {maybe}
-* If player didnt guess the right word, it discount 1 point and change the word // 
-* Store the words compiled and get all the data about it // {maybe}
-* Scoreboard //
-* Styling //
-
 ## React Component Hierarchy
 ```
 < div className= ‘ App’ >
@@ -58,12 +45,45 @@
     <Definition />
     <RandomWord />
     <Input />
-    <DecodedWordList />
   </main>
 
   <footer>
     <Credits />
   </footer>
 </div>
+```
+## Code Snippet
+```
+handleKeyDown = (event) => {
+    const form = event.target.form;
+    const characterKey = event.keyCode;//character code
+    const currentInputIndex = Array.prototype.indexOf.call(form, event.target)
+
+    // console.log(key);
+    // avoid doing something when:
+    // backspace : 8 and first character
+    // enter: 13
+    // space : 32
+    //  - : 189
+    //  tab : 9
+    if ((characterKey === 8 && currentInputIndex === 0) || characterKey === 32 || characterKey === 13 || characterKey === 189 || characterKey === 9)
+      event.preventDefault();//Do nothing on UI
+
+    // Avoid  writing                       //(If current index is empty and its not 0) and the character is not TAB aor space
+    if ((event.target.value.length >= 1 || (event.target.value === '' && currentInputIndex !== 0)) && characterKey !== 9 && characterKey !== 32) {
+      if (characterKey === 8) {  // delete when backspace
+        if (currentInputIndex > 0) // avoid going to less than 0 index
+          form.elements[currentInputIndex - 1].focus();
+
+        form.elements[currentInputIndex].value = '';
+        event.preventDefault(); // avoid focusing on previous when assigning empty
+      } else if (currentInputIndex + 1 < form.elements.length) {
+        form.elements[currentInputIndex + 1].focus(); // go to next field//input if length of characters is higher than 1 character
+      } else {
+        event.target.value = event.target.value.charAt(0); // writes a character if characters length is 0
+        event.preventDefault();
+      }
+    }
+  };
 ```
 
