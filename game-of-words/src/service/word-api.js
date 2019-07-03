@@ -15,9 +15,3 @@ export const fetchData = async () => {
   console.log(response.data)
   return response.data;
 }
-
-
-
-// `https://www.dictionaryapi.com/api/v3/references/collegiate/json/love?key=715c01ee-1458-4d7b-b390-02d4f8cadf26`
-// const KEY = '715c01ee-1458-4d7b-b390-02d4f8cadf26'
-// 'Authorization': `Bearer ${KEY}`

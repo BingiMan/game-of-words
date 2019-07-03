@@ -167,7 +167,6 @@ class App extends React.Component {
             timeElapsed: timeElapsed
           }
         )
-
       }), () => {
       });
     }
@@ -206,7 +205,6 @@ class App extends React.Component {
       }),
         () => {
           this.scoreBoardRef.current.updateBestTime(newTime);
-          // console.log(this.state);
         }
       );
     }
@@ -226,16 +224,21 @@ class App extends React.Component {
         </header>
         <main>
           <Route exact path="/" render={Home} />
-          <Route exact path="/game-of-words" render={() => <RandomWord gameOverDisplay={this.gameOverDisplay}
-            settings={this.state.settings}
-            checkIfUserWon={this.checkIfUserWon.bind(this)}
-            ref={this.randomWordRef} />} />
+          <Route exact path="/game-of-words" render={() =>
+            <RandomWord
+              gameOverDisplay={this.gameOverDisplay}
+              settings={this.state.settings}
+              checkIfUserWon={this.checkIfUserWon.bind(this)}
+              ref={this.randomWordRef} />} />
+
           {this.state.settings.toggle || this.state.settings.gameOver ?
             <ScoreBoard ref={this.scoreBoardRef} parentState={this.state}
               storeScoreboard={this.storeScoreboard.bind(this)} /> : null}
+
           {!this.state.settings.gamePaused ?
             <TimeComponent ref={this.timerRef} gameOver={this.state.settings.gameOver}
               gamePaused={this.state.settings.gamePaused} /> : null}
+
           <button className={this.state.settings.toggle ? 'scoreboard-button-active' : 'scoreboard-button'}
             onClick={this.toggleScoreBoard}>
             SCOREBOARD
