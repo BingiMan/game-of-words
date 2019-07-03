@@ -12,7 +12,7 @@ import play_btn_img from './assets/img/play-btn.png'
 class App extends React.Component {
   constructor() {
     super();
-    this.disableAPI = true;
+    this.disableAPI = false;
 
     this.mySettings = {
       word: "aruba",
@@ -99,7 +99,7 @@ class App extends React.Component {
   };
 
   checkIfUserWon = (_won) => {
-    console.log("[USER WON] ? " + _won);
+    // console.log("[USER WON] ? " + _won);
     this.setState((prevState, props) => (
       {
         settings: Object.assign(
@@ -109,8 +109,8 @@ class App extends React.Component {
         )
       }
     ), () => {
-      console.log("[CALL BACK WON]");
-      console.log(this.state);
+      // console.log("[CALL BACK WON]");
+      // console.log(this.state);
       this.scoreBoardRef.current.updateSettings(this.state);
       this.scoreBoardRef.current.updateScoreBoard();
       this.scoreBoardRef.current.calculatePoints();
@@ -141,7 +141,7 @@ class App extends React.Component {
           )
         }
       ), () => {
-        console.log('[call back fetch]');
+        // console.log('[call back fetch]');
         // console.log(this.state.settings);
         this.randomWordRef.current.updateWord(this.state);
       });
@@ -153,7 +153,7 @@ class App extends React.Component {
       const timeElapsed = this.timerRef.current.stopTimer();
 
       if (this.state.settings.won) {
-        console.log("UPDATING BEST TIME");
+        // console.log("UPDATING BEST TIME");
         this.setBestTime(timeElapsed);
       }
 
@@ -176,7 +176,7 @@ class App extends React.Component {
   startGame = () => {
     this.fetchWord();
 
-    console.log("Starting game");
+    // console.log("Starting game");
     // console.log(this.fetchData());
     this.setState({
       settings: Object.assign(
@@ -189,8 +189,8 @@ class App extends React.Component {
         }
       )
     }, () => {
-      console.log(this.state.settings);
-      console.log("@@@@@@@@@@@@@@@@@@@@@@@@@")
+      // console.log(this.state.settings);
+      // console.log("@@@@@@@@@@@@@@@@@@@@@@@@@")
     })
   };
 
@@ -206,7 +206,7 @@ class App extends React.Component {
       }),
         () => {
           this.scoreBoardRef.current.updateBestTime(newTime);
-          console.log(this.state);
+          // console.log(this.state);
         }
       );
     }

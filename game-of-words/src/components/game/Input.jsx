@@ -15,7 +15,7 @@ export default class Input extends React.Component {
     for (let input of this.formRef.current.childNodes) {
       newWord += input.value;
     }
-    console.log('new Word: ' + newWord);
+    // console.log('new Word: ' + newWord);
     this.setState({
       inputValue: newWord
     }, () => {

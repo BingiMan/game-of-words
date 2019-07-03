@@ -20,8 +20,8 @@ export default class ScoreBoard extends React.Component {
         }
       )
     }), () => {
-      console.log('[CALL BACK CURRENT POINTS]');
-      console.log(this.state);
+      // console.log('[CALL BACK CURRENT POINTS]');
+      // console.log(this.state);
       this.StatisticComponentChildRef.current.updateScoreBoard(this.state)
     });
 
@@ -54,19 +54,19 @@ export default class ScoreBoard extends React.Component {
   };
 
   calculatePoints = () => {
-    console.log('[CALCULATING POINTS]');
+    // console.log('[CALCULATING POINTS]');
     if (this.state.settings.won) {
-      console.log(this.getPoints(10));
+      // console.log(this.getPoints(10));
     } else {
-      console.log(this.getPoints(-10));
+      // console.log(this.getPoints(-10));
     }
   };
 
   updateBestTime = (newTime) => {
     this.updateScoreboard({ bestTime: newTime }, () => {
-      console.log("Updating best time");
-      console.log(this.state);
-      console.log(newTime);
+      // console.log("Updating best time");
+      // console.log(this.state);
+      // console.log(newTime);
       this.StatisticComponentChildRef.current.updateScoreBoard(this.state);
     })
   };

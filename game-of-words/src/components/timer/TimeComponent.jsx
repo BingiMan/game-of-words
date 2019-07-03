@@ -34,7 +34,7 @@ export default class TimeComponent extends Component {
   }
 
   stopTimer = () => {
-    console.log("Stopping Timer");
+    // console.log("Stopping Timer");
     if (this.timer !== null)
       clearInterval(this.timer);
 

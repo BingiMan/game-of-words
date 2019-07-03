@@ -4,10 +4,10 @@ import './style.css'
 export default class StatisticsComponent extends React.Component {
   constructor(props) {
     super(props);
-    console.log("[STATISTIC COMPONENT]");
-    console.log(props);
-    console.log("[-------------------------]");
-    console.log(this.props.getState());
+    // console.log("[STATISTIC COMPONENT]");
+    // console.log(props);
+    // console.log("[-------------------------]");
+    // console.log(this.props.getState());
 
     this.state = {
       settings: this.props.getState().settings,

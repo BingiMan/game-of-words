@@ -3,8 +3,8 @@ import React from 'react';
 export default class StatusComponent extends React.Component {
   constructor(props) {
     super(props);
-    console.log("Status Component Props");
-    console.log(this.props);
+    // console.log("Status Component Props");
+    // console.log(this.props);
   }
 
 
