@@ -10,6 +10,7 @@ export default class StatisticsComponent extends React.Component {
     console.log(this.props.getState());
 
     this.state = {
+      settings: this.props.getState().settings,
       scoreboard: this.props.getState().scoreboard
     }
   }
@@ -28,21 +29,9 @@ export default class StatisticsComponent extends React.Component {
 
   render() {
     return (
-      <div className='main-container'>
+      <div className={this.state.settings.toggle ? 'main-container-active' : 'main-container'}>
         <table className='table-container'>
           <tbody>
-            <div id='panelCaller'>
-              <span>S</span>
-              <span>C</span>
-              <span>O</span>
-              <span>R</span>
-              <span>E</span>
-              <span>B</span>
-              <span>O</span>
-              <span>A</span>
-              <span>R</span>
-              <span>D</span>
-            </div>
             <tr>
               <th>Total Games Played</th>
               <th>{this.state.scoreboard.totalGamesPlayed}</th>

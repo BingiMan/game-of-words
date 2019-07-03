@@ -6,15 +6,17 @@ import { Home } from './components/main/Home'
 import { fetchData } from './service/word-api'
 import ScoreBoard from "./components/scoreboard/ScoreBoard";
 import TimeComponent from "./components/timer/TimeComponent";
-import StatisticsComponent from "./components/scoreboard/StatisticsComponent";
 import home_btn_img from './assets/img/home-btn.png'
 import play_btn_img from './assets/img/play-btn.png'
 
 class App extends React.Component {
   constructor() {
     super();
+    this.disableAPI = true;
+
     this.mySettings = {
-      word: 'newword',
+      word: "aruba",
+      description: "a popular island resort in the Netherlands Antilles",
       won: false,
       toggle: false,
       gameOver: false,
@@ -37,6 +39,7 @@ class App extends React.Component {
 
     this.timerRef = React.createRef();
     this.scoreBoardRef = React.createRef();
+    this.randomWordRef = React.createRef();
   }
 
   storeScoreboard = (childState) => {
@@ -79,6 +82,22 @@ class App extends React.Component {
     ));
   };
 
+  goHome = () => {
+    this.endGame();
+    this.setState((prevState, props) => (
+      {
+        settings: Object.assign(
+          {},
+          prevState.settings,
+          {
+            toggle: false,
+            gameOver: false,
+          }
+        )
+      }
+    ));
+  };
+
   checkIfUserWon = (_won) => {
     console.log("[USER WON] ? " + _won);
     this.setState((prevState, props) => (
@@ -100,18 +119,33 @@ class App extends React.Component {
   };
 
   fetchWord = async () => {
-    // const data = await fetchData();
-    // if (!data.results) {
-    // this.fetchWord();
-    // return;
-    // }
-    // this.setState({
-    //   word: 'newWord2'
-    // })
-  };
+    if (!this.disableAPI) {
+      const data = await fetchData();
+      // console.log(data);
+      // console.log(data.results);
 
-  componentDidMount = () => {
-    this.fetchWord();
+      if (data.word.split(' ').length > 1 || !data.results) {
+        // console.log('fetching another data');
+        return this.fetchWord();
+      }
+
+      this.setState((prevState, props) => (
+        {
+          settings: Object.assign(
+            {},
+            prevState.settings,
+            {
+              word: data.word,
+              description: data.results
+            }
+          )
+        }
+      ), () => {
+        console.log('[call back fetch]');
+        // console.log(this.state.settings);
+        this.randomWordRef.current.updateWord(this.state);
+      });
+    }
   };
 
   endGame = () => {
@@ -140,7 +174,10 @@ class App extends React.Component {
   };
 
   startGame = () => {
+    this.fetchWord();
+
     console.log("Starting game");
+    // console.log(this.fetchData());
     this.setState({
       settings: Object.assign(
         {},
@@ -148,6 +185,7 @@ class App extends React.Component {
         {
           gameOver: false,
           gamePaused: false,
+          toggle: false
         }
       )
     }, () => {
@@ -178,7 +216,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <header>
-          <Link to="/">
+          <Link to="/" onClick={this.goHome}>
             <img className='link-img' src={home_btn_img} alt="home" height="100" />
           </Link>
           <Link onClick={this.startGame} to="/game-of-words">
@@ -190,14 +228,16 @@ class App extends React.Component {
           <Route exact path="/" render={Home} />
           <Route exact path="/game-of-words" render={() => <RandomWord gameOverDisplay={this.gameOverDisplay}
             settings={this.state.settings}
-            checkIfUserWon={this.checkIfUserWon.bind(this)} />} />
+            checkIfUserWon={this.checkIfUserWon.bind(this)}
+            ref={this.randomWordRef} />} />
           {this.state.settings.toggle || this.state.settings.gameOver ?
             <ScoreBoard ref={this.scoreBoardRef} parentState={this.state}
               storeScoreboard={this.storeScoreboard.bind(this)} /> : null}
           {!this.state.settings.gamePaused ?
             <TimeComponent ref={this.timerRef} gameOver={this.state.settings.gameOver}
               gamePaused={this.state.settings.gamePaused} /> : null}
-          <button className={this.state.settings.toggle ? 'scoreboard-button-active' : 'scoreboard-button'} onClick={this.toggleScoreBoard}>
+          <button className={this.state.settings.toggle ? 'scoreboard-button-active' : 'scoreboard-button'}
+            onClick={this.toggleScoreBoard}>
             SCOREBOARD
                     </button>
         </main>

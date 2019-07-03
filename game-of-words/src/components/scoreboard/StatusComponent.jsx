@@ -10,10 +10,10 @@ export default class StatusComponent extends React.Component {
 
   render() {
     return (
-      <div>
-        <img src="" alt="reward-icon"></img>
-        <div>
-          <span>{this.props.won ? "you won! 10 Points" : "You lost! 10 points"}</span>
+      <div className='match-result'>
+        {/*<img src={match_result} alt="reward-icon"/>*/}
+        <div className='match-result-message'>
+          <span>{this.props.won ? "You Won! 10 Points" : "You lost! 10 points"}</span>
         </div>
       </div>
     )

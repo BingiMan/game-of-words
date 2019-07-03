@@ -1,27 +1,26 @@
-.main-container{
+.main-container, .main-container-active {
   position: fixed;
   color: white;
   background-image: url('../../assets/img/score-board2.png');
   background-position: center;
-  background-size:341px 368px;
-  background-repeat:no-repeat;
-  height:500px;
-  width:363px;
-  left:-300px;
-  top:83px;
+  background-size: 341px 368px;
+  background-repeat: no-repeat;
+  height: 500px;
+  width: 363px;
+  left: -300px;
+  top: 83px;
   transition: left 0.4s ease-in-out;
-  -webkit-transition:left 0.4s ease-in-out;
-  font-size:18px;
+  -webkit-transition: left 0.4s ease-in-out;
+  font-size: 18px;
   border-radius: 0 20px 20px 0;
-
-
+  transform: translate(0, 0);
 }
-.main-container:active {
-  left: -15px;
 
-}
-.main-container:hover > table > tbody > div#panelCaller{
-  opacity:0;
+.main-container-active {
+  transform: translate(280px, 0);
+  transition: 0.4s ease-in-out;
+  -webkit-transition: 0.4s ease-in-out;
+
 }
 
 #panelCaller {
@@ -38,10 +37,34 @@
 }
 
 
-.table-container{
+.table-container {
   display: inline-block;
   margin: 110px 71px 40px 30px;
 }
-th{
+
+th {
   padding: 11px;
+}
+
+.match-result {
+  background-image: url("../../assets/img/match_result.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 400px 250px;
+  position: absolute;
+  height: 300px;
+  margin-top: 165px;
+  width: 100%;
+}
+
+.match-result span {
+  color: white;
+  font-size: 35px;
+  font-weight: 900;
+  text-shadow: 3px 3px 4px yellow, 4px 16px 4px black;
+}
+
+.match-result-message {
+  height: 100px;
+  margin-top: 125px;
 }

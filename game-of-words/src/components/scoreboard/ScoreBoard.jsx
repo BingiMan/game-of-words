@@ -19,7 +19,11 @@ export default class ScoreBoard extends React.Component {
           currentScore: ((points > 0 || (prevState.scoreboard.currentScore > Math.abs(points)) ? prevState.scoreboard.currentScore + points : 0))
         }
       )
-    }));
+    }), () => {
+      console.log('[CALL BACK CURRENT POINTS]');
+      console.log(this.state);
+      this.StatisticComponentChildRef.current.updateScoreBoard(this.state)
+    });
 
     return this.state.scoreboard.currentScore;
   };
@@ -50,6 +54,7 @@ export default class ScoreBoard extends React.Component {
   };
 
   calculatePoints = () => {
+    console.log('[CALCULATING POINTS]');
     if (this.state.settings.won) {
       console.log(this.getPoints(10));
     } else {
@@ -79,7 +84,7 @@ export default class ScoreBoard extends React.Component {
   render() {
     return (
       <div>
-        {this.state.settings.gameOver || this.state.settings.toggle ?
+        {this.state.settings.gameOver && this.state.settings.toggle ?
           <StatusComponent sendPoints={this.getPoints.bind(this)} won={this.state.settings.won} /> : null}
         <StatisticsComponent ref={this.StatisticComponentChildRef} getState={this.updateSettings.bind(this)}
           storeScoreboard={this.props.storeScoreboard} />

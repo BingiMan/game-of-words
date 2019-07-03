@@ -4,7 +4,8 @@
 }
 
 .board-img {
-
+  display: inline-block;
+  height: 310px;
 }
 
 .random-word {
@@ -16,26 +17,30 @@
   margin-bottom: 13%;
 }
 
-.game-input button, input {
-  font-size: 20px;
+input.game-input {
+  background: none;
   border: none;
-  font-weight: 800;
-}
-
-.game-input input {
-  background: url(../../assets/img/button-img.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 373px 98px;
-  width: 328px;
-  height: 84px;
+  border-bottom: 3px solid #fff;
+  width: 45px;
+  font-size: 40px;
+  font-variant-caps: all-petite-caps;
+  color: #fff;
   text-align: center;
-  transform: rotate(-12deg);
+  margin: 0 12px;
 }
 
 ::placeholder {
   color: yellow;
   text-shadow: 1px 0px 4px #081e19;
+}
+
+input:active {
+  outline: none;
+  border: none;
+}
+
+input:focus {
+  outline: 0;
 }
 
 .game-button {
@@ -47,7 +52,19 @@
   color: maroon;
   margin: 20px;
   width: 200px;
-  transform: rotate(23deg);
+  cursor: pointer;
+  font-size: 30px;
+  font-weight: bold;
+  border: none;
+}
+
+.game-button:active {
+  outline: none;
+  border: none;
+}
+
+.game-button:focus {
+  outline: 0;
 }
 
 .game-button:hover {
@@ -55,7 +72,16 @@
 }
 
 .word-definition {
-  padding-top: 100px;
+  padding-top: 121px;
+  margin-bottom: 8px;
+  text-shadow: 5px 4px 7px white, 2px 2px 2px mediumaquamarine;
+}
+
+.word-description {
+  max-width: 400px;
+  margin: auto;
+  margin-bottom: 12px;
+  font-weight: 800;
 }
 
 .word-list-container {
@@ -95,4 +121,7 @@ li.word-wooden > div > span {
   margin: auto;
 }
 
+.definition{
+  font-weight: 900;
+}
 
